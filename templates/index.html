@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Dice Roller Workshop</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Dice Roller</h1>
+        <form method="post" action="/roll">
+            <label for="dice_notation">Enter dice notation (e.g., 2D10+5):</label>
+            <input type="text" name="dice_notation" id="dice_notation" required>
+            <button type="submit" class="button-primary">Roll the Dice</button>
+        </form>
+        {% if result %}
+        <div class="result">
+            <h3>Result:</h3>
+            <p>{{ result }}</p>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
+
