@@ -25,7 +25,7 @@ def roll_dice(dice_notation):
 
         total = sum(random.randint(1, dice_sides) for _ in range(num_dice)) + modifier
         return f'Result: {total}'
-    except Exception:
+    except ValueError:
         return "Invalid input. Please enter a valid dice notation (for example: 2D10+5)."
 
 
